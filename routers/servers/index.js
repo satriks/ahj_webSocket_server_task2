@@ -44,10 +44,11 @@ router.patch('/servers', async (ctx) => {
 })
 
 router.delete('/servers/:id', async (ctx) => {
-  servers.addLog(new Log(id, 'received: Delete command')) //eslint-disable-line 
+  const id = ctx.params.id
+  servers.addLog(new Log(id, 'received: Delete command'))
   setTimeout(() => {
     servers.delete(ctx.params.id)
-    servers.addLog(new Log(id, 'Deleted')) //eslint-disable-line 
+    servers.addLog(new Log(id, 'Deleted'))
   }, pause)
 
   ctx.response.status = 200
