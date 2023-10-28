@@ -1,8 +1,8 @@
- class Server {
-    constructor(id, state = 'stopped') {
+class Server {
+  constructor (id, state = 'stopped') {
     this.id = id
-    this.state = state  
-    }
+    this.state = state
+  }
 }
 
 module.exports = Server

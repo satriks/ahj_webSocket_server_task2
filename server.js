@@ -3,8 +3,6 @@ const { koaBody } = require('koa-body')
 const { Date } = require('core-js')
 const cors = require('@koa/cors')
 const http = require('http')
-const url = require('url')
-const { v4: uuid } = require('uuid')
 
 const port = 7070
 const app = new Koa()
@@ -19,9 +17,7 @@ app.use(koaBody({
 app.use(cors())
 app.use(router())
 
-
 const server = http.createServer(app.callback())
-
 
 // app.listen(port)
 server.listen(port)
